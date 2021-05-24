@@ -24,16 +24,15 @@
    </header>
 
     <div id="app">
-    <div id="grande" v-for="objeto in info">
-      <div class="w3-container-noticia" id="w3-container">
-        <img v-bind:src="objeto.urlToImage">
-        <button>Más información</button>
-        <h3>{{ objeto.title }}</h3>
+      <div id="grande" v-for="objeto in info">
+        <div class="w3-container-noticia" id="w3-container">
+          <h3>{{ objeto.title }}</h3>
+          <img v-bind:src="objeto.urlToImage">
+          <button v-on:click="mostrarDetalle">Más información</button>
+        </div>
       </div>
     </div>
-    </div>
 
-<div id="maestro"></div>
 
    <div id="modalDetalle" class="w3-modal">
     <div class="w3-modal-content">

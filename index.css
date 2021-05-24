@@ -33,7 +33,7 @@ header input, button{
     margin: 0.2rem;
 }
 
-#maestro{
+#app{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
