@@ -85,31 +85,12 @@ function loadDoc(url) {
 var app = new Vue({
   el: '#app',
   data: {
-    noticias:[
-      {
-        author: "https://www.engadget.com/about/editors/steve-dent",
-        content: "Epic Games has added another hyph",
-        description: "Epic Gamesqme-focused artist portfolios..",
-        publishedAt: "2021-05-Z",
-        urlToImage: "https://s.yimg.com/os/creatr-uploaded-images/2021-05/9ea6f6f0-abfd-11eb-9fff-54f9464d69ba"
-    },
-
-      {
-        author: "htt2",
-        content: "Epic Games has added another hyph 2",
-        description: "Epic Gamesqme-focused arti 2",
-        publishedAt: "2021-05-Z 2",
-        urlToImage: "https://s.yimg.com/os/creatr-uploaded-images/2021-05/9ea6f6f0-abfd-11eb-9fff-54f9464d69ba"
-      },
-
-      {
-        author: "3",
-        content: "Epic Games 3",
-        description: "Epic Gamesqm 3",
-        publishedAt: "2021-05-Z  3",
-        urlToImage: "https://s.yimg.com/os/creatr-uploaded-images/2021-05/9ea6f6f0-abfd-11eb-9fff-54f9464d69ba"
-      }
-    ]
+    info: null,
+  },
+  mounted () {
+    axios
+      .get('https://newsapi.org/v2/everything?q=game&pageSize=15&apiKey=5e976ef6430f49e08d17ea33c7605f41')
+      .then(response => ( this.info=response.data.articles));
   }
 })
 

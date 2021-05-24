@@ -17,6 +17,10 @@
  --tertiary-color-m: #01727498;
  }
 
+ img{
+     width: 100px;
+     height: 100px;
+ }
 header{
     background-color: var(--primary-color);
     display: flex;

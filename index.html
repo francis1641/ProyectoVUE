@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
    <header id="header">
@@ -22,16 +24,16 @@
    </header>
 
     <div id="app">
-      <div v-for="objeto in noticias">
+    <div id="grande" v-for="objeto in info">
+      <div class="w3-container-noticia" id="w3-container">
         <img v-bind:src="objeto.urlToImage">
-        El autor es {{ objeto.author }} el contenido es {{ objeto.content }} la descripcion es {{ objeto.description }} y publicado {{ objeto.publishedAt }}
+        <button>Más información</button>
+        <h3>{{ objeto.title }}</h3>
       </div>
-
+    </div>
     </div>
 
-<div class="maestro">
-  
-</div>
+<div id="maestro"></div>
 
    <div id="modalDetalle" class="w3-modal">
     <div class="w3-modal-content">
