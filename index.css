@@ -82,3 +82,10 @@ header input, button{
     justify-content: center;
     padding: 2rem;
 }
+
+.w3-modal{
+    display: block;
+}
+.oculto{
+    display: none;
+}

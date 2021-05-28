@@ -28,25 +28,28 @@
         <div class="w3-container-noticia" id="w3-container">
           <h3>{{ objeto.title }}</h3>
           <img v-bind:src="objeto.urlToImage">
-          <button v-on:click="mostrarDetalle">Más información</button>
+          <button v-on:click="mostrarDetalle($event, objeto)">Más información</button>
         </div>
       </div>
-    </div>
+    
 
 
-   <div id="modalDetalle" class="w3-modal">
+   <div id="modalDetalle" v-bind:class="{ 'w3-modal': Autor, 'oculto': !Autor }">
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('modalDetalle').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-        <p class="Autor"></p>
-        <p class="contenido"></p>
-        <p class="descripcion"></p>
-        <p class="publicado"></p>
-        <a href="" class="url" target="_blank">Ver noticia</a>
+        <p class="Autor">{{Autor}}</p>
+        <p class="contenido">{{Contenido}}</p>
+        <p class="descripcion">{{Descripcion}}</p>
+        <p class="publicado">{{Publicado}}</p>
+        <a v-bind:href="Enlace" class="url" target="_blank">Ver noticia</a>
       </div>
     </div>
   </div>
+
+
+<img  id="miimagen" src="img/cargando.gif" alt="cargando" v-if="!info">
 </div>
-<img  id="miimagen" src="img/cargando.gif" alt="cargando">
+</div>
 </body>  <script src="index.js"></script>
 </html>
