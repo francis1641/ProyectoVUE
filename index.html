@@ -34,10 +34,10 @@
     
 
 
-   <div id="modalDetalle" v-bind:class="{ 'w3-modal': Autor, 'oculto': !Autor }">
+   <div id="modalDetalle" v-bind:class="{ 'w3-modal1': displayModal, 'oculto': !displayModal }">
     <div class="w3-modal-content">
       <div class="w3-container">
-        <span onclick="document.getElementById('modalDetalle').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <span v-on:click="oculto"  class="w3-button w3-display-topright">&times;</span>
         <p class="Autor">{{Autor}}</p>
         <p class="contenido">{{Contenido}}</p>
         <p class="descripcion">{{Descripcion}}</p>

@@ -10,7 +10,7 @@ var app = new Vue({
     Publicado:"",
     Enlace:"",
     mostrar:false,
-    displayModal: 'none'
+    displayModal: false
   },
   mounted () {
     axios
@@ -19,19 +19,22 @@ var app = new Vue({
   },
   
   methods:{
-mostrarDetalle(evento, articulo)
- {
-  modal = document.getElementById("modalDetalle");
-    this.displayModal = 'block';
-    this.Autor = articulo.author ? articulo.author: "No hay autor";
-    this.Contenido = articulo.content ? articulo.content: "No hay contenido";
-    this.Descripcion = articulo.description ? articulo.description: "No hay descripcion";
-    this.Publicado = articulo.publishedAt;
-    this.Enlace = articulo.url;
-    //modal.style.display = "block";
+    mostrarDetalle(evento, articulo)
+    {
+      modal = document.getElementById("modalDetalle");
+        this.displayModal = "block";
+        this.Autor = articulo.author ? articulo.author: "No hay autor";
+        this.Contenido = articulo.content ? articulo.content: "No hay contenido";
+        this.Descripcion = articulo.description ? articulo.description: "No hay descripcion";
+        this.Publicado = articulo.publishedAt;
+        this.Enlace = articulo.url;
+    },
+    oculto(){
+      this.displayModal= !this.displayModal;
+
+    }
 
 
- }
   }
 })
 
